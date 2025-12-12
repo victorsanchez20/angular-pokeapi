@@ -11,6 +11,7 @@ import { NgFor } from '@angular/common';
 })
 export class Home implements OnInit {
 
+  // Variable for save the pokemons
   pokemons: any[] = [];
 
   constructor(private pokemonService: Pokemon, private cd: ChangeDetectorRef) {}
@@ -22,7 +23,16 @@ export class Home implements OnInit {
   loadPokemons() {
     this.pokemonService.getPokemons().subscribe((data: any) => {
       this.pokemons = data.results; 
+      console.log(this.pokemons);
       this.cd.detectChanges();
+
+      this.loadPokemonForm(1);
+    });
+  }
+
+  loadPokemonForm(id: number) {
+    this.pokemonService.getPokemonForm(id).subscribe((data: any) => {
+      console.log(data);
     });
   }
 }

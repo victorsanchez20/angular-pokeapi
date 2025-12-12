@@ -7,11 +7,18 @@ import { Observable, retryWhen } from 'rxjs';
 })
 export class Pokemon {
  
-  private apiUrl = 'https://pokeapi.co/api/v2/pokemon';
+  private readonly API_URL = 'https://pokeapi.co/api/v2/pokemon';
+
+  private readonly API_URL_FORM = 'https://pokeapi.co/api/v2/pokemon-form';
+
 
   constructor(private http: HttpClient) {}
 
   getPokemons(): Observable<any> {
-    return this.http.get(`${this.apiUrl}?limit=40`);
+    return this.http.get(`${this.API_URL}?limit=40`);
+  }
+
+  getPokemonForm(id: number): Observable<any> {
+    return this.http.get(`${this.API_URL_FORM}/${id}`);
   }
 }
