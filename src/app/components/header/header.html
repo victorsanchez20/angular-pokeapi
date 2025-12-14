@@ -5,10 +5,39 @@
         </div>    
         <div class="links">
             <ul>
-                <li><a href="">Generations</a></li>
-                <li><a href="">Types</a></li>
-                <li><a href=""></a></li>
-                <li><input type="search"></li>
+                <li class="dropdown">
+                    <button class="dropdown-btn" (click)="toggleGenDropdown()">
+                        GENERATIONS
+                        <span class="arrow" [class.rotate]="genOpen">▼</span>
+                    </button>
+
+                    <ul class="dropdown-menu" [class.show]="genOpen">
+                        <li (click)="selectGeneration(1)">Generation I</li>
+                        <li (click)="selectGeneration(2)">Generation II</li>
+                        <li (click)="selectGeneration(3)">Generation III</li>
+                        <li (click)="selectGeneration(4)">Generation IV</li>
+                        <li (click)="selectGeneration(5)">Generation V</li>
+                    </ul>
+                    </li>
+
+                    <li class="dropdown">
+                    <button class="dropdown-btn" (click)="toggleTypeDropdown()">
+                        TYPES
+                        <span class="arrow" [class.rotate]="typeOpen">▼</span>
+                    </button>
+
+                    <ul class="dropdown-menu" [class.show]="typeOpen">
+                        <li (click)="selectType('fire')">Fire</li>
+                        <li (click)="selectType('water')">Water</li>
+                        <li (click)="selectType('grass')">Grass</li>
+                        <li (click)="selectType('electric')">Electric</li>
+                        <li (click)="selectType('psychic')">Psychic</li>
+                    </ul>
+                </li>
+                <li>
+                    <label for="search" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">Search Pokemon</label>
+                    <input id="search" type="text" placeholder="Search Pokemon" (input)="searchOfPokemon($event.target.value)">
+                </li>
             </ul>
         </div>
     </nav>

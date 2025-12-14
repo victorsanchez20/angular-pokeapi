@@ -1,14 +1,20 @@
-<ul class="pokemon-list">
-  <li class="pokemon-card" *ngFor="let p of pokemons">
-    
-    <div class="image">
-      <img 
-        [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + p.url.split('/')[6] + '.png'"
-        alt="{{ p.name }}"
-      >
+<div class="container">
+    <ul class="pokemon-list">
+        <li class="pokemon-card" *ngFor="let p of pokemons">
+            
+            <div class="image">
+            <img 
+                [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + p.url.split('/')[6] + '.png'"
+                alt="{{ p.name }}"
+            >
+            </div>
+            <div class="nombre">
+            {{ p.name }}
+            </div>
+        </li>
+    </ul>
+    <div class="buttons">
+        <button class="btn btn-less" (click)="LessPokemon()">Load Less</button>
+        <button class="btn btn-more" (click)="MorePokemon()">Load More</button>
     </div>
-    <div class="nombre">
-      {{ p.name }}
-    </div>
-  </li>
-</ul>
+</div>

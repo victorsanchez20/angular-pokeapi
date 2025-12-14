@@ -5,4 +5,9 @@
 
 body {
     margin: 0;
+    background-image: url("app/assets/background-pokemon.webp");
+    background-size: cover;        /* ocupa todo */
+    background-repeat: no-repeat;  /* no se repite */
+    background-position: center;   /* centra la imagen */
+    background-attachment: fixed;  /* opcional: efecto fijo */
 }

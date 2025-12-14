@@ -1,3 +1,6 @@
+.container {
+    margin: 0 100px;
+} 
 /* Contenedor de toda la lista */
 .pokemon-list {
   display: flex;
@@ -13,19 +16,20 @@
   font-family: Pokemon, sans-serif;
   width: 120px;
   padding: 10px;
-  background: #f8f8f8;
+  background: #be0101cc;
+  
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 2px solid #ddd;
+  border: 2px solid #be0101cc;
 }
 
 /* Hover */
 .pokemon-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-  border-color: #ffcb05;
+  border-color: #000000;
 }
 
 /* Imagen del Pokémon */
@@ -41,5 +45,61 @@
   font-size: 18px;
   text-transform: capitalize;
   font-weight: bold;
-  color: #333;
+  color: white;
+}
+
+/*************************/
+/* Contenedor de botones */
+/*************************/
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+/* Estilo base */
+.btn {
+  font-family: Pokemon, sans-serif;
+  padding: 12px 28px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+  box-shadow: 0 4px 0 black;
+}
+
+/* Botón Load More */
+.btn-more {
+  background: #2a75bb; /* azul Pokémon */
+  color: white;
+}
+
+/* Botón Load Less */
+.btn-less {
+  background: #ffcb05; /* amarillo Pokémon */
+  color: black;
+}
+
+/* Hover */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 black;
+}
+
+/* Click */
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 black;
+}
+
+/* Deshabilitado (opcional) */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
